@@ -1,7 +1,27 @@
 <?php
 
-$router = $di->getRouter();
+$router = $di->getRouter(false);
 
-// Define your routes here
+// Not Found
+
+$router->notFound(
+	[
+		'controller' => 'Errors',
+		'action'	 => '_404',
+	]
+);
+
+// Pages Routes
+
+$router->add('/',
+	[
+		'controller' => 'Pages',
+		'action'	 => 'index'
+	]
+);
+
+// Client Routes
+
+// Admin Routes
 
 $router->handle();

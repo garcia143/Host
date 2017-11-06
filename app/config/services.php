@@ -6,6 +6,8 @@ use Phalcon\Mvc\Url as UrlResolver;
 use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
 use Phalcon\Session\Adapter\Files as SessionAdapter;
+use Phalcon\Http\Response\Cookies;
+use Phalcon\Crypt;
 use Phalcon\Flash\Direct as Flash;
 
 /**
@@ -20,10 +22,8 @@ $di->setShared('config', function () {
  */
 $di->setShared('url', function () {
     $config = $this->getConfig();
-
     $url = new UrlResolver();
     $url->setBaseUri($config->application->baseUri);
-
     return $url;
 });
 
@@ -36,6 +36,13 @@ $di->setShared('view', function () {
     $view = new View();
     $view->setDI($this);
     $view->setViewsDir($config->application->viewsDir);
+
+    $view->disableLevel(
+        [
+            View::LEVEL_LAYOUT      => true,
+            View::LEVEL_MAIN_LAYOUT => true,
+        ]
+    );
 
     $view->registerEngines([
         '.volt' => function ($view) {
@@ -51,9 +58,7 @@ $di->setShared('view', function () {
             return $volt;
         },
         '.phtml' => PhpEngine::class
-
     ]);
-
     return $view;
 });
 
@@ -102,11 +107,30 @@ $di->set('flash', function () {
 });
 
 /**
+ * Crypt Service
+ */
+
+$di->set('crypt', function () {
+    $crypt = new Crypt();
+    $crypt->setKey($config->application->cryptSalt);
+    return $crypt;
+});
+
+/**
  * Start the session the first time some component request the session service
  */
 $di->setShared('session', function () {
     $session = new SessionAdapter();
     $session->start();
-
     return $session;
+});
+
+/**
+ * Cookies
+ */
+
+$di->set('cookies', function () {
+    $cookies = new Cookies();
+    $cookies->useEncrption(false);
+    return $cookies;
 });
