@@ -54,6 +54,7 @@ $messages = [
     'LABEL_PASSCONF' => 'ยืนยันรหัสผ่าน',
     'LABEL_PHONENUMBER' => 'เบอร์โทรศัพท์',
     'LABEL_ALREADYHASACCOUNT' => 'มีบัญชีอยู่แล้ว',
+    'LABEL_SIGNUP' => 'สมัครสมาชิก',
     'BTN_ADD' => 'เพิ่ม',
     'BTN_SIGNIN' => 'เข้าสู่ระบบ',
     'BTN_SIGNUP' => 'สมัครสมาชิก',

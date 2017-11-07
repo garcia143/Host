@@ -14,6 +14,7 @@
     <div class="container">
       
 <div class="signup">
+  <h3><?= $this->translate->_('LABEL_SIGNUP') ?></h3>
   <?= $this->tag->form([]) ?>
 
   <?= $form->render('_token', ['value' => $this->security->getToken()]) ?>

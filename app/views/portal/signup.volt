@@ -4,6 +4,7 @@
 
 {% block content %}
 <div class="signup">
+  <h3>{{translate._('LABEL_SIGNUP')}}</h3>
   {{form()}}
 
   {{ form.render('_token', ['value': security.getToken()]) }}
