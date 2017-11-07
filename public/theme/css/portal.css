@@ -1,0 +1,21 @@
+body {
+
+}
+
+.signup-page {
+  padding: 60px 0;
+  background: #01579B;
+}
+
+.signup form {
+  margin: 0 auto;
+  max-width: 380px;
+  padding: 40px 20px;
+  background: #FFF;
+}
+
+.signup .go-signin {
+  margin-top: 20px;
+  color: #FFF;
+  text-align: center;
+}

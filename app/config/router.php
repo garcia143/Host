@@ -45,12 +45,12 @@ $router->addGet('/contact-us',
 	]
 );
 
-// Clients
+// Portal
 
-$router->add('/clients/login',
+$router->add('/portal/signup',
 	[
-		'controller' => 'Clients',
-		'action'	 => 'login'
+		'controller' => 'Portal',
+		'action'	 => 'signup'
 	]
 );
 

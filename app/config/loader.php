@@ -8,6 +8,7 @@ $loader = new \Phalcon\Loader();
 
 $loader->registerNamespaces(
 	[
+		'Host\Models' => $config->application->modelsDir,
 		'Host\Forms' => $config->application->formsDir,
 		'Host'		 => $config->application->libraryDir
 	]
