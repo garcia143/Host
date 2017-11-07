@@ -1,4 +1,4 @@
-a:1:{i:0;s:4833:"<!DOCTYPE html>
+a:1:{i:0;s:4931:"<!DOCTYPE html>
 <html lang="<?= $currentLang ?>">
   <head>
     <meta charset="utf-8" />
@@ -38,7 +38,8 @@ a:1:{i:0;s:4833:"<!DOCTYPE html>
             <ul>
               <li><a href="#"><?= $this->translate->_('PAGES@FOOTER_DOMAINS_REGISTER') ?></a></li>
               <li><a href="#"><?= $this->translate->_('PAGES@FOOTER_DOMAINS_TRANSFER') ?></a></li>
-              <li><a href="#"><?= $this->translate->_('PAGES@FOOTER_DOMAINS_DOMAINCHECK') ?></a></li>
+              <li><a href="#"><?= $this->translate->_('PAGES@FOOTER_DOMAINS_AVAILABILITY') ?></a></li>
+              <li><a href="#"><?= $this->translate->_('PAGES@FOOTER_DOMAINS_WHOIS') ?></a></li>
             </ul>
           </div>
           <div class="col-lg">

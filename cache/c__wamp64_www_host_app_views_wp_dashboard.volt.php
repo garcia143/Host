@@ -6,6 +6,7 @@
     <meta name="author" content="<?= $appName ?>">
     <title></title>
     <!-- Styles -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <?= $this->tag->stylesheetlink('vendor/bootstrap/dist/css/bootstrap.min.css') ?>
     <?= $this->tag->stylesheetlink('theme/css/workplace.css') ?>
   </head>
@@ -27,24 +28,47 @@
   				<!-- Dashboard -->
   				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
   					<a class="nav-link" href="index.html">
-  						<i class="fa fa-fw fa-dashboard"></i>
+              <i class="material-icons">face</i>
   						<span class="nav-link-text"><?= $this->translate->_('WORKPLACE@MENU_DASHBOARD') ?></span>
   					</a>
   				</li>
-          <!-- Customers -->
-  				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-  					<a class="nav-link" href="index.html">
-  						<i class="fa fa-fw fa-dashboard"></i>
-  						<span class="nav-link-text"><?= $this->translate->_('WORKPLACE@MENU_CUSTOMERS') ?></span>
-  					</a>
-  				</li>
-          <!-- Menu Levels 1 -->
+          <!-- Order -->
   				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-  					<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+  					<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#orders" data-parent="#clients">
   						<i class="fa fa-fw fa-wrench"></i>
-  						<span class="nav-link-text"><?= $this->translate->_('WORKPLACE@MENU_EMPLOYEES') ?></span>
+  						<span class="nav-link-text"><?= $this->translate->_('WORKPLACE@MENU_ORDERS') ?></span>
   					</a>
-  					<ul class="sidenav-second-level collapse" id="collapseComponents">
+  					<ul class="sidenav-second-level collapse" id="orders">
+              <li>
+  							<a href="<?= $this->url->get('workplace/employees') ?>"><?= $this->translate->_('WORKPLACE@MENU_CLIENTS_LIST') ?></a>
+  						</li>
+  						<li>
+  							<a href="<?= $this->url->get('workplace/employees/job') ?>"><?= $this->translate->_('WORKPLACE@MENU_CLIENTS_ADD') ?></a>
+  						</li>
+  					</ul>
+  				</li>
+          <!-- Clients -->
+  				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+  					<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#clients" data-parent="#clients">
+  						<i class="fa fa-fw fa-wrench"></i>
+  						<span class="nav-link-text"><?= $this->translate->_('WORKPLACE@MENU_CLIENTS') ?></span>
+  					</a>
+  					<ul class="sidenav-second-level collapse" id="clients">
+              <li>
+  							<a href="<?= $this->url->get('workplace/employees') ?>"><?= $this->translate->_('WORKPLACE@MENU_CLIENTS_LIST') ?></a>
+  						</li>
+  						<li>
+  							<a href="<?= $this->url->get('workplace/employees/job') ?>"><?= $this->translate->_('WORKPLACE@MENU_CLIENTS_ADD') ?></a>
+  						</li>
+  					</ul>
+  				</li>
+          <!-- Employees -->
+  				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+  					<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#staff" data-parent="#exampleAccordion">
+  						<i class="fa fa-fw fa-wrench"></i>
+  						<span class="nav-link-text"><?= $this->translate->_('WORKPLACE@MENU_STAFF') ?></span>
+  					</a>
+  					<ul class="sidenav-second-level collapse" id="staff">
               <li>
   							<a href="<?= $this->url->get('workplace/employees') ?>"><?= $this->translate->_('WORKPLACE@MENU_EMPLOYEESLISTS') ?></a>
   						</li>
@@ -56,11 +80,11 @@
   						</li>
   					</ul>
   				</li>
-  				<!-- Menu Levels 1 -->
+          <!-- Settings -->
   				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
   					<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
   						<i class="fa fa-fw fa-wrench"></i>
-  						<span class="nav-link-text">Menu Levels 1</span>
+  						<span class="nav-link-text"><?= $this->translate->_('WORKPLACE@MENU_SETTINGS') ?></span>
   					</a>
   					<ul class="sidenav-second-level collapse" id="collapseComponents">
   						<li>
@@ -71,11 +95,41 @@
   						</li>
   					</ul>
   				</li>
-  				<!-- Menu Levels -->
+          <!-- Blog -->
+  				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+  					<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#MENU_BLOG" data-parent="#exampleAccordion">
+  						<i class="fa fa-fw fa-wrench"></i>
+  						<span class="nav-link-text"><?= $this->translate->_('WORKPLACE@MENU_BLOG') ?></span>
+  					</a>
+  					<ul class="sidenav-second-level collapse" id="MENU_BLOG">
+  						<li>
+  							<a href="navbar.html"><?= $this->translate->_('WORKPLACE@MENU_BLOG_LIST') ?></a>
+  						</li>
+              <li>
+  							<a href="<?= $this->url->get('/workplace/blog/category') ?>"><?= $this->translate->_('WORKPLACE@MENU_BLOG_CATEGORY') ?></a>
+  						</li>
+  					</ul>
+  				</li>
+          <!-- Tools -->
+  				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+  					<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#tools" data-parent="#exampleAccordion">
+  						<i class="fa fa-fw fa-wrench"></i>
+  						<span class="nav-link-text"><?= $this->translate->_('WORKPLACE@MENU_TOOLS') ?></span>
+  					</a>
+  					<ul class="sidenav-second-level collapse" id="tools">
+  						<li>
+  							<a href="navbar.html"><?= $this->translate->_('WORKPLACE@MENU_TOOLS_DOMAIN') ?></a>
+  						</li>
+  						<li>
+  							<a href="navbar.html">Navbar</a>
+  						</li>
+  					</ul>
+  				</li>
+  				<!-- Security -->
   				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
   					<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
   						<i class="fa fa-fw fa-sitemap"></i>
-  						<span class="nav-link-text">Menu Levels</span>
+  						<span class="nav-link-text"><?= $this->translate->_('WORKPLACE@MENU_SECURITY') ?></span>
   					</a>
   					<ul class="sidenav-second-level collapse" id="collapseMulti">
   						<li>
@@ -91,11 +145,27 @@
   						</li>
   					</ul>
   				</li>
+          <!-- Stats -->
+  				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+  					<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#tools" data-parent="#exampleAccordion">
+  						<i class="fa fa-fw fa-wrench"></i>
+  						<span class="nav-link-text"><?= $this->translate->_('WORKPLACE@MENU_STATS') ?></span>
+  					</a>
+  					<ul class="sidenav-second-level collapse" id="tools">
+  						<li>
+  							<a href="navbar.html"><?= $this->translate->_('WORKPLACE@MENU_TOOLS_DOMAIN') ?></a>
+  						</li>
+  						<li>
+  							<a href="navbar.html">Navbar</a>
+  						</li>
+  					</ul>
+  				</li>
   			</ul>
   			<ul class="navbar-nav sidenav-toggler">
   				<li class="nav-item">
   					<a class="nav-link text-center" id="sidenavToggler">
-  						<i class="fa fa-fw fa-angle-left"></i>
+              <i class="material-icons">face</i>
+
   					</a>
   				</li>
   			</ul>
@@ -134,7 +204,7 @@
   					<li class="breadcrumb-item">
   						<a href="index.html"><?= $appName ?></a>
   					</li>
-  					<li class="breadcrumb-item active"><?= $this->translate->_('WORKPLACE@DASHBOARD_TITLE') ?></li>
+  					<li class="breadcrumb-item active"><?= $pageTitle ?></li>
   				</ol>
   		</div>
   	</div>
@@ -153,5 +223,6 @@
     <?= $this->tag->javascriptinclude('vendor/jquery/dist/jquery.min.js') ?>
     <?= $this->tag->javascriptinclude('vendor/popper.js/dist/umd/popper.min.js') ?>
     <?= $this->tag->javascriptinclude('vendor/bootstrap/dist/js/bootstrap.min.js') ?>
+    <?= $this->tag->javascriptinclude('theme/js/workplace.js') ?>
   </body>
 </html>

@@ -32,20 +32,43 @@
   						<span class="nav-link-text">{{translate._("WORKPLACE@MENU_DASHBOARD")}}</span>
   					</a>
   				</li>
-          <!-- Customers -->
-  				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-  					<a class="nav-link" href="index.html">
-  						<i class="fa fa-fw fa-dashboard"></i>
-  						<span class="nav-link-text">{{translate._("WORKPLACE@MENU_CUSTOMERS")}}</span>
+          <!-- Order -->
+  				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+  					<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#orders" data-parent="#clients">
+  						<i class="fa fa-fw fa-wrench"></i>
+  						<span class="nav-link-text">{{translate._("WORKPLACE@MENU_ORDERS")}}</span>
   					</a>
+  					<ul class="sidenav-second-level collapse" id="orders">
+              <li>
+  							<a href="{{url("workplace/employees")}}">{{translate._("WORKPLACE@MENU_CLIENTS_LIST")}}</a>
+  						</li>
+  						<li>
+  							<a href="{{url("workplace/employees/job")}}">{{translate._("WORKPLACE@MENU_CLIENTS_ADD")}}</a>
+  						</li>
+  					</ul>
+  				</li>
+          <!-- Clients -->
+  				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+  					<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#clients" data-parent="#clients">
+  						<i class="fa fa-fw fa-wrench"></i>
+  						<span class="nav-link-text">{{translate._("WORKPLACE@MENU_CLIENTS")}}</span>
+  					</a>
+  					<ul class="sidenav-second-level collapse" id="clients">
+              <li>
+  							<a href="{{url("/workplace/clients/list")}}">{{translate._("WORKPLACE@MENU_CLIENTS_LIST")}}</a>
+  						</li>
+  						<li>
+  							<a href="{{url("/workplace/clients/add")}}">{{translate._("WORKPLACE@MENU_CLIENTS_ADD")}}</a>
+  						</li>
+  					</ul>
   				</li>
           <!-- Employees -->
   				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-  					<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+  					<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#staff" data-parent="#exampleAccordion">
   						<i class="fa fa-fw fa-wrench"></i>
-  						<span class="nav-link-text">{{translate._("WORKPLACE@MENU_EMPLOYEES")}}</span>
+  						<span class="nav-link-text">{{translate._("WORKPLACE@MENU_STAFF")}}</span>
   					</a>
-  					<ul class="sidenav-second-level collapse" id="collapseComponents">
+  					<ul class="sidenav-second-level collapse" id="staff">
               <li>
   							<a href="{{url("workplace/employees")}}">{{translate._("WORKPLACE@MENU_EMPLOYEESLISTS")}}</a>
   						</li>
@@ -54,6 +77,36 @@
   						</li>
               <li>
   							<a href="{{url("workplace/employees/docs")}}">{{translate._("WORKPLACE@MENU_EMPLOYEESDOCS")}}</a>
+  						</li>
+  					</ul>
+  				</li>
+          <!-- Settings -->
+  				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+  					<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+  						<i class="fa fa-fw fa-wrench"></i>
+  						<span class="nav-link-text">{{translate._('WORKPLACE@MENU_SETTINGS')}}</span>
+  					</a>
+  					<ul class="sidenav-second-level collapse" id="collapseComponents">
+  						<li>
+  							<a href="navbar.html">Navbar</a>
+  						</li>
+  						<li>
+  							<a href="navbar.html">Navbar</a>
+  						</li>
+  					</ul>
+  				</li>
+          <!-- Blog -->
+  				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+  					<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#MENU_BLOG" data-parent="#exampleAccordion">
+  						<i class="fa fa-fw fa-wrench"></i>
+  						<span class="nav-link-text">{{translate._('WORKPLACE@MENU_BLOG')}}</span>
+  					</a>
+  					<ul class="sidenav-second-level collapse" id="MENU_BLOG">
+  						<li>
+  							<a href="navbar.html">{{translate._('WORKPLACE@MENU_BLOG_LIST')}}</a>
+  						</li>
+              <li>
+  							<a href="{{url('/workplace/blog/category')}}">{{translate._('WORKPLACE@MENU_BLOG_CATEGORY')}}</a>
   						</li>
   					</ul>
   				</li>
@@ -72,26 +125,11 @@
   						</li>
   					</ul>
   				</li>
-  				<!-- Menu Levels 1 -->
-  				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-  					<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-  						<i class="fa fa-fw fa-wrench"></i>
-  						<span class="nav-link-text">Menu Levels 1</span>
-  					</a>
-  					<ul class="sidenav-second-level collapse" id="collapseComponents">
-  						<li>
-  							<a href="navbar.html">Navbar</a>
-  						</li>
-  						<li>
-  							<a href="navbar.html">Navbar</a>
-  						</li>
-  					</ul>
-  				</li>
-  				<!-- Menu Levels -->
+  				<!-- Security -->
   				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
   					<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
   						<i class="fa fa-fw fa-sitemap"></i>
-  						<span class="nav-link-text">Menu Levels</span>
+  						<span class="nav-link-text">{{translate._('WORKPLACE@MENU_SECURITY')}}</span>
   					</a>
   					<ul class="sidenav-second-level collapse" id="collapseMulti">
   						<li>
@@ -104,6 +142,21 @@
   									<a href="#">Third Level Item</a>
   								</li>
   							</ul>
+  						</li>
+  					</ul>
+  				</li>
+          <!-- Stats -->
+  				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+  					<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#tools" data-parent="#exampleAccordion">
+  						<i class="fa fa-fw fa-wrench"></i>
+  						<span class="nav-link-text">{{translate._('WORKPLACE@MENU_STATS')}}</span>
+  					</a>
+  					<ul class="sidenav-second-level collapse" id="tools">
+  						<li>
+  							<a href="navbar.html">{{translate._('WORKPLACE@MENU_TOOLS_DOMAIN')}}</a>
+  						</li>
+  						<li>
+  							<a href="navbar.html">Navbar</a>
   						</li>
   					</ul>
   				</li>
@@ -153,8 +206,11 @@
   					</li>
   					<li class="breadcrumb-item active">{{pageTitle}}</li>
   				</ol>
+          {% block content %}{% endblock %}
   		</div>
   	</div>
+
+
 
   	<!-- Footer -->
   	<footer class="sticky-footer">

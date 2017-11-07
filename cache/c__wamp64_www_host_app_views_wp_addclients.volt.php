@@ -1,4 +1,4 @@
-a:3:{i:0;s:9510:"<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="<?= $currentLang ?>">
   <head>
     <meta charset="utf-8" />
@@ -206,7 +206,16 @@ a:3:{i:0;s:9510:"<!DOCTYPE html>
   					</li>
   					<li class="breadcrumb-item active"><?= $pageTitle ?></li>
   				</ol>
-          ";s:7:"content";N;i:1;s:566:"
+          
+<div class="card">
+  <div class="card-header">
+
+  </div>
+  <div class="card-body">
+
+  </div>
+</div>
+
   		</div>
   	</div>
 
@@ -229,4 +238,3 @@ a:3:{i:0;s:9510:"<!DOCTYPE html>
     <?= $this->tag->javascriptinclude('theme/js/workplace.js') ?>
   </body>
 </html>
-";}

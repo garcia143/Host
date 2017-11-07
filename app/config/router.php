@@ -70,10 +70,10 @@ $router->add('/workplace/dashboard',
 	]
 );
 
-$router->add('/workplace/customers',
+$router->add('/workplace/clients/add',
 	[
 		'controller' => 'WP',
-		'action'	 => 'customers'
+		'action'	 => 'addclients'
 	]
 );
 
@@ -81,6 +81,13 @@ $router->add('/workplace/employees',
 	[
 		'controller'	=> 'WP',
 		'action'			=> 'employees'
+	]
+);
+
+$router->add('/workplace/blog/category',
+	[
+		'controller'	=> 'WP',
+		'action'			=> 'blogcate'
 	]
 );
 

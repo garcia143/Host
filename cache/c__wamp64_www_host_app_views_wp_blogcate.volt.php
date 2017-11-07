@@ -1,4 +1,4 @@
-a:3:{i:0;s:9510:"<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="<?= $currentLang ?>">
   <head>
     <meta charset="utf-8" />
@@ -206,7 +206,43 @@ a:3:{i:0;s:9510:"<!DOCTYPE html>
   					</li>
   					<li class="breadcrumb-item active"><?= $pageTitle ?></li>
   				</ol>
-          ";s:7:"content";N;i:1;s:566:"
+          
+<div class="row">
+  <div class="col-lg-4">
+   <div class="card">
+     <div class="card-header">
+       <?= $this->translate->_('LABEL_BLOG_CATE_ADD') ?>
+     </div>
+     <div class="card-body">
+       <?= $this->tag->form([]) ?>
+        <div class="form-group">
+          <label for="name"><?= $this->translate->_('LABEL_BLOG_CATEGORY_NAME') ?></label>
+          <?= $form->render('name') ?>
+        </div>
+        <button type="submit" class="btn btn-success"><?= $this->translate->_('BTN_ADD') ?></button>
+       <?= $this->tag->endForm() ?>
+     </div>
+   </div>
+  </div>
+  <div class="col-lg-8">
+    <div class="card">
+      <div class="card-header">
+
+      </div>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th><?= $this->translate->_('LABEL_BLOG_CATEGORY_ID') ?></th>
+              <th><?= $this->translate->_('LABEL_BLOG_CATEGORY_NAME') ?></th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
   		</div>
   	</div>
 
@@ -229,4 +265,3 @@ a:3:{i:0;s:9510:"<!DOCTYPE html>
     <?= $this->tag->javascriptinclude('theme/js/workplace.js') ?>
   </body>
 </html>
-";}

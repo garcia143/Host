@@ -38,7 +38,8 @@
             <ul>
               <li><a href="#">{{translate._('PAGES@FOOTER_DOMAINS_REGISTER')}}</a></li>
               <li><a href="#">{{translate._('PAGES@FOOTER_DOMAINS_TRANSFER')}}</a></li>
-              <li><a href="#">{{translate._('PAGES@FOOTER_DOMAINS_DOMAINCHECK')}}</a></li>
+              <li><a href="#">{{translate._('PAGES@FOOTER_DOMAINS_AVAILABILITY')}}</a></li>
+              <li><a href="#">{{translate._('PAGES@FOOTER_DOMAINS_WHOIS')}}</a></li>
             </ul>
           </div>
           <div class="col-lg">
