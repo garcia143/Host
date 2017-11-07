@@ -28,8 +28,10 @@ return new \Phalcon\Config([
         'pluginsDir'     => APP_PATH . '/plugins/',
         'libraryDir'     => APP_PATH . '/library/',
         'formsDir'       => APP_PATH . '/forms/',
+        'langsDir'       => APP_PATH . '/languages/',
         'cacheDir'       => BASE_PATH . '/cache/',
-        'baseUri'        => '',
-        'cryptSalt'      => '',
+        'baseUri'        => '/',
+        'publicUrl'      => 'http://host.dev/',
+        'cryptSalt'      => 'Hum2rJZznY94UE9YDfMmg4mPwhxvRFrJvVUtsGYHpA9CvebmrmNTcM54pMNahqHpYqykgTcUZZwpfEV8WuebkpEuEAds4k2xjPWedtdqz7gUbmEUgkhhburRez8kfbAR',
     ]
 ]);

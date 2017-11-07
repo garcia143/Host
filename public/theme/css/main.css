@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+body {
+
+}
+
+.header-info {
+  border-bottom: 1px solid #efefef;
+}
+
+.footer {
+  padding: 20px 0;
+  background: #101010;
+}
+
+.footer h4 {
+  color: #FFF;
+}
+
+.footer ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.footer .copyright-info p {
+  color: #909090;
+  text-align: center;
+}

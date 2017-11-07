@@ -2,7 +2,9 @@
 
 $router = $di->getRouter(false);
 
-// Not Found
+/**
+ * Not found Route
+ */
 
 $router->notFound(
 	[
@@ -11,17 +13,75 @@ $router->notFound(
 	]
 );
 
-// Pages Routes
+/**
+ * Pages
+ */
 
-$router->add('/',
+$router->addGet('/',
 	[
 		'controller' => 'Pages',
 		'action'	 => 'index'
 	]
 );
 
-// Client Routes
+$router->addGet('/domain',
+	[
+		'controller' => 'Pages',
+		'action'	 => ''
+	]
+);
 
-// Admin Routes
+$router->addGet('/web-hosting',
+	[
+		'controller' => 'Pages',
+		'action'	 => ''
+	]
+);
+
+$router->addGet('/contact-us',
+	[
+		'controller' => 'Pages',
+		'action'	 => 'contactus'
+	]
+);
+
+// Clients
+
+$router->add('/clients/login',
+	[
+		'controller' => 'Clients',
+		'action'	 => 'login'
+	]
+);
+
+// Work Place
+
+$router->add('/workplace/login',
+	[
+		'controller' => 'WP',
+		'action'	 => 'login'
+	]
+);
+
+$router->add('/workplace/dashboard',
+	[
+		'controller'	=> 'WP',
+		'action'			=> 'dashboard'
+	]
+);
+
+$router->add('/workplace/customers',
+	[
+		'controller' => 'WP',
+		'action'	 => 'customers'
+	]
+);
+
+$router->add('/workplace/employees',
+	[
+		'controller'	=> 'WP',
+		'action'			=> 'employees'
+	]
+);
 
 $router->handle();

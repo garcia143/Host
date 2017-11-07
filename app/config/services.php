@@ -52,7 +52,8 @@ $di->setShared('view', function () {
 
             $volt->setOptions([
                 'compiledPath' => $config->application->cacheDir,
-                'compiledSeparator' => '_'
+                'compiledSeparator' => '_',
+                'compileAlways'     => true,
             ]);
 
             return $volt;
@@ -131,6 +132,28 @@ $di->setShared('session', function () {
 
 $di->set('cookies', function () {
     $cookies = new Cookies();
-    $cookies->useEncrption(false);
+    $cookies->useEncryption(false);
     return $cookies;
+});
+
+/**
+ * Translate Service
+ */
+$di->setShared('translate', function() use($di) {
+
+  $dispatcher = $di->get("cookies");
+  $language = $dispatcher->get('language');
+
+  $translateFile = APP_PATH.'/languages/'.$language.'.php';
+
+  if (file_exists($translateFile)) {
+    require $translateFile;
+  } else {
+    require APP_PATH.'/languages/en.php';
+  }
+
+  return new \Phalcon\Translate\Adapter\NativeArray(array(
+    "content" => $messages
+  ));
+
 });

@@ -2,8 +2,17 @@
 
 class PagesController extends ControllerBase {
 
+	public function initialize() {
+		parent::initialize();
+
+
+
+	}
+
 	public function indexAction() {
-		return 'index';
+
+		$this->view->setVar('pageTitle', $this->translate->_("PAGES@HOME_TITLE"));
+
 	}
 
 }
